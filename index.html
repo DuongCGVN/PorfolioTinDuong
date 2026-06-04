@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio học thuật - Sinh viên năm nhất CNTT - Nhập môn Công nghệ số">
+    <meta property="og:title" content="Portfolio Học Tập - CNTT">
+    <meta property="og:description" content="Hành trình học tập và phát triển kỹ năng công nghệ số">
+    <meta property="og:type" content="website">
+    <title>Portfolio Học Tập - Nhập môn Công nghệ Số</title>
+
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary: #2E7D32;
+            --secondary: #4CAF50;
+            --background: #F8FAFC;
+            --text: #1E293B;
+            --card: #FFFFFF;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --border: #E2E8F0;
+        }
+
+        [data-theme="dark"] {
+            --primary: #4CAF50;
+            --secondary: #66BB6A;
+            --background: #0F172A;
+            --text: #F1F5F9;
+            --card: #1E293B;
+            --shadow: rgba(0, 0, 0, 0.3);
+            --border: #334155;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--card);
+            box-shadow: 0 2px 10px var(--shadow);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        nav .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .theme-toggle {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text);
+            opacity: 0.8;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('pic1.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(5px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin-bottom: 1.5rem;
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+           
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            margin: 1.5rem auto;
+            max-width: 600px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        .about-content h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .tag {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: var(--primary);
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+            width: 45%;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: auto;
+        }
+
+        .timeline-content {
+            background: var(--card);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow);
+            position: relative;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            top: 20px;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -60px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -60px;
+        }
+
+        .timeline-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: var(--card);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px var(--shadow);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .project-content p {
+            margin-bottom: 1rem;
+            color: var(--text);
+            opacity: 0.9;
+        }
+
+        .project-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tool-tag {
+            background: var(--background);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .project-btn {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .project-btn:hover {
+            color: var(--secondary);
+        }
+
+        /* Skills Dashboard */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px var(--shadow);
+            text-align: center;
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+
+        .skill-percent {
+            margin-top: 0.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* Achievements */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .achievement-card {
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px var(--shadow);
+            text-align: center;
+        }
+
+        .achievement-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-label {
+            color: var(--text);
+            opacity: 0.8;
+        }
+
+        /* Reflection */
+        .reflection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .reflection-card {
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px var(--shadow);
+            border-left: 5px solid var(--primary);
+        }
+
+        .reflection-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .reflection-card p {
+            line-height: 1.8;
+        }
+
+        /* Documents Library */
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .document-card {
+            background: var(--card);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .document-card:hover {
+            transform: translateX(5px);
+        }
+
+        .document-icon {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .document-info h4 {
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .document-info p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px var(--shadow);
+            text-align: center;
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .contact-card a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--card);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 999;
+            border: none;
+            font-size: 1.5rem;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 60px;
+            }
+
+            .timeline-item:nth-child(even) {
+                margin-left: 0;
+            }
+
+            .timeline-content::before {
+                left: -60px !important;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo"><img src="pic2.png" alt="Logo"><img src="pic3.png" alt="Logo"></div>
+            <ul>
+                <li><a href="#about">Giới thiệu</a></li>
+                <li><a href="#journey">Hành trình</a></li>
+                <li><a href="#reports">Báo cáo</a></li>
+                <li><a href="#skills">Kỹ năng</a></li>
+            </ul>
+            
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Cao Tín Dương</h1>
+            <p class="subtitle">Sinh viên năm nhất - Đại học Việt-Nhật</p>
+            <p class="tagline">Bài tập dự án cá nhân (Digital Portfolio)</p>
+    
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>Giới thiệu</h2>
+            <p class="section-subtitle">Tìm hiểu thêm về em</p>
+            <div class="about-grid">
+                <img src="pic4.png" alt="About" class="about-image">
+                <div class="about-content">
+                    <h3>Chào thầy/cô và các bạn,em là Cao Tín Dương</h3>
+                    <p>Em là sinh viên năm nhất ngành công nghệ chip bán dẫn, đang trên hành trình khám phá và phát triển các kỹ năng công nghệ số cần thiết cho thế kỷ 21.</p>
+                    <p><strong>Mục tiêu nghề nghiệp:</strong> Trở thành một kỹ sư công nghệ chip bán dẫn có khả năng giải quyết vấn đề sáng tạo và đóng góp giá trị cho cộng đồng thông qua công nghệ.</p>
+                    <p><strong>Sở thích:</strong> Lập trình, nghiên cứu AI, đọc sách công nghệ, và tham gia các dự án mã nguồn mở.</p>
+                    <h3 style="margin-top: 1.5rem;">Kỹ năng đang phát triển</h3>
+                    <div class="skills-tags">
+                        <span class="tag">Tìm kiếm thông tin</span>
+                        <span class="tag">AI & Prompt Engineering</span>
+                        <span class="tag">Làm việc nhóm và phối hợp trực tuyến</span>
+                        <span class="tag">Tư duy phản biện</span>
+                        <span class="tag">Digital Content Creation</span>
+                        <span class="tag">Tự học và tìm hiểu công nghệ mới</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Journey -->
+    <section id="journey" style="background: var(--background);">
+        <div class="container">
+            <h2>Hành trình học tập</h2>
+            <p class="section-subtitle">Những bước đi trong môn học Nhập môn Công nghệ số</p>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3>Bắt đầu học môn</h3>
+                        <p>Làm quen với môn học, hiểu được tầm quan trọng của kỹ năng công nghệ số trong thời đại hiện đại.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3> Kỹ năng tìm kiếm thông tin</h3>
+                        <p>Học cách sử dụng từ khóa hiệu quả, đánh giá nguồn tin cậy, và khai thác dữ liệu từ nhiều nguồn khác nhau.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3> AI và Prompt Engineering</h3>
+                        <p>Khám phá sức mạnh của AI, học cách viết prompt hiệu quả, và ứng dụng AI vào học tập và giải quyết vấn đề.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3> Cộng tác trực tuyến</h3>
+                        <p>Làm việc nhóm với các công cụ số, giao tiếp hiệu quả, và quản lý dự án cộng đồng.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3> Sáng tạo nội dung số</h3>
+                        <p>Sử dụng AI để tạo nội dung đa phương tiện, thiết kế và trình bày ý tưởng một cách chuyên nghiệp.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <h3> Hoàn thành Portfolio</h3>
+                        <p>Tổng hợp kiến thức, hoàn thiện portfolio, và phản ánh về hành trình học tập của bản thân.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievement Reports Section -->
+    <section id="reports">
+        <div class="container">
+            <h2>Báo cáo kết quả đạt được</h2>
+            <p class="section-subtitle">Tổng hợp các bài học và kỹ năng phát triển</p>
+            <div class="projects-grid">
+                <!-- Bài 1 -->
+                <div class="project-card fade-in">
+                    <div class="project-image">1</div>
+                    <div class="project-content">
+                        <h3>Bài 1: Thao tác cơ bản với tệp tin và thư mục</h3>
+                        <p><strong>Mục tiêu:</strong> Làm quen với hệ điều hành Windows và rèn luyện kỹ năng quản lý dữ liệu khoa học.</p>
+
+                        <p><strong>Quá trình thực hiện:</strong> Thực hành tạo cấu trúc thư mục ThucHanh_CaoTinDuong, tạo và đổi tên tệp GhiChuQuanTrong.txt, sao chép dữ liệu vào thư mục TaiLieu bằng Ctrl+C/Ctrl+V, và thực tập xóa/khôi phục từ Recycle Bin.</p>
+
+                        <p><strong>Kỹ năng đạt được:</strong> Thành thạo tổ chức cây thư mục logic, sử dụng phím tắt để tối ưu tốc độ làm việc và hiểu tầm quan trọng của quản lý dữ liệu ngăn nắp.</p>
+
+                        <p><strong>Sản phẩm:</strong> Cấu trúc thư mục học tập và tệp ghi chú với minh chứng thao tác thành công.</p>
+
+                        <p><strong>Tự đánh giá:</strong> Dù là thao tác cơ bản, nhưng việc thực hiện bài bản giúp củng cố nền tảng sử dụng máy tính chuyên nghiệp hơn.</p>
+                    </div>
+                </div>
+
+                <!-- Bài 2 -->
+                <div class="project-card fade-in">
+                    <div class="project-image">🔍</div>
+                    <div class="project-content">
+                        <h3>Bài 2: Tìm kiếm và đánh giá thông tin học thuật</h3>
+                        <p><strong>Mục tiêu:</strong> Nghiên cứu chủ đề "Ứng dụng AI trong Thiết kế và Sản xuất Vi mạch Bán dẫn" và rèn luyện kỹ năng khai thác tài liệu uy tín.</p>
+
+                        <p><strong>Quá trình thực hiện:</strong> Sử dụng từ khóa học thuật như "Machine learning in Electronic Design Automation" trên IEEE Xplore, Nature, Springer và McKinsey. Áp dụng bộ lọc từ năm 2021 và đánh giá 12 nguồn theo độ tin cậy High/Medium/Low.</p>
+
+                        <p><strong>Kỹ năng đạt được:</strong> Trích dẫn chuẩn Harvard, tư duy phản biện và phân biệt bài báo peer-reviewed với bài viết truyền thông thứ cấp.</p>
+
+                        <p><strong>Sản phẩm:</strong> Báo cáo chi tiết về ứng dụng AI trong ngành bán dẫn với 12 tài liệu tham khảo chất lượng cao.</p>
+
+                        <p><strong>Tự đánh giá:</strong> Đánh giá nguồn tin là kỹ năng quan trọng nhất. Giờ đã biết cách kiểm tra uy tín tác giả và minh bạch phương pháp nghiên cứu.</p>
+                    </div>
+                </div>
+
+                <!-- Bài 3 -->
+                <div class="project-card fade-in">
+                    <div class="project-image">1</div>
+                    <div class="project-content">
+                        <h3>Bài 3: Kỹ năng viết Prompt hiệu quả</h3>
+                        <p><strong>Mục tiêu:</strong> Học cách điều khiển LLM để hỗ trợ tóm tắt tài liệu, giải thích khái niệm và tạo bộ câu hỏi ôn tập.</p>
+
+                        <p><strong>Quá trình thực hiện:</strong> Thử nghiệm 3 phiên bản prompt (Cơ bản, Cải tiến, Nâng cao). Áp dụng Role Prompting, Chain-of-Thought và Few-shot Prompting để điều hướng AI hiệu quả.</p>
+
+                        <p><strong>Kỹ năng đạt được:</strong> Hiểu được chất lượng đầu ra tỉ lệ thuận với độ rõ ràng của 3 chiều: Ai đang nói (vai trò), Cấu trúc (định dạng) và Ngữ cảnh (đối tượng).</p>
+
+                        <p><strong>Sản phẩm:</strong> Báo cáo phân tích hiệu quả các phiên bản prompt và bộ nguyên tắc 6 bước viết prompt hiệu quả.</p>
+
+                        <p><strong>Tự đánh giá:</strong> Đặt câu hỏi đúng đôi khi quan trọng hơn tìm câu trả lời. Prompt có chiến lược tiết kiệm thời gian và cho kết quả chuyên sâu hơn.</p>
+                    </div>
+                </div>
+
+                <!-- Bài 4 -->
+                <div class="project-card fade-in">
+                    <div class="project-image">1</div>
+                    <div class="project-content">
+                        <h3>Bài 4: Ứng dụng AI tạo sinh trong sáng tạo nội dung số</h3>
+                        <p><strong>Mục tiêu:</strong> Sử dụng tổ hợp công cụ AI để thực hiện dự án thuyết trình "Công nghệ AI và Tương lai".</p>
+
+                        <p><strong>Quá trình thực hiện:</strong> Dùng Claude lên outline logic (tiết kiệm 75% thời gian), DALL-E 3 tạo hình ảnh mạng neural, Canva AI thiết kế layout. Sau đó cá nhân hóa nội dung, đổi văn phong hàn lâm sang ngôn ngữ gần gũi sinh viên.</p>
+
+                        <p><strong>Kỹ năng đạt được:</strong> Thành thạo tích hợp nhiều công cụ AI, rút ngắn thời gian từ 10 giờ xuống 4 giờ (tiết kiệm 60%). Nhận thức rõ rủi ro hallucination và cần kiểm chứng độc lập.</p>
+
+                        <p><strong>Sản phẩm:</strong> Bài thuyết trình 15 slide chuyên nghiệp và bảng so sánh hiệu quả các công cụ ChatGPT, DALL-E 3, Canva AI.</p>
+
+                        <p><strong>Tự đánh giá:</strong> AI không thay thế người sáng tạo mà là công cụ khuếch đại năng lực. Tự hào ở khâu thêm góc nhìn cá nhân.</p>
+                    </div>
+                </div>
+
+                <!-- Bài 5 -->
+                <div class="project-card fade-in">
+                    <div class="project-image">1</div>
+                    <div class="project-content">
+                        <h3>Bài 5: Tổng quan về Trí tuệ nhân tạo</h3>
+                        <p><strong>Mục tiêu:</strong> Nắm vững kiến thức cốt lõi về AI, công nghệ nền tảng và tác động đến các ngành công nghiệp.</p>
+
+                        <p><strong>Quá trình thực hiện:</strong> Nghiên cứu Machine Learning (học từ dữ liệu), Deep Learning (mạng neural sâu) và NLP (xử lý ngôn ngữ tự nhiên). Tìm hiểu ứng dụng trong y tế, tài chính và sản xuất.</p>
+
+                        <p><strong>Kỹ năng đạt được:</strong> Hiểu cả hai mặt của AI: tăng hiệu quả và đổi mới, nhưng cũng có thách thức về đạo đức, minh bạch và rủi ro mất việc làm. Nắm rõ sơ đồ Neural Network.</p>
+
+                        <p><strong>Sản phẩm:</strong> Slide thuyết trình "Công nghệ AI – Định hình tương lai" và sơ đồ Neural Network minh họa Deep Learning.</p>
+
+                        <p><strong>Tự đánh giá:</strong> Có cái nhìn tổng quan về ngành học. AI là kỷ nguyên mới và chuẩn bị kỹ năng số là thiết yếu cho tương lai.</p>
+                    </div>
+                </div>
+
+                <!-- Bài 6 -->
+                <div class="project-card fade-in">
+                    <div class="project-image">1</div>
+                    <div class="project-content">
+                        <h3>Bài 6: Sử dụng AI có trách nhiệm và liêm chính học thuật</h3>
+                        <p><strong>Mục tiêu:</strong> Xây dựng bộ nguyên tắc cá nhân để sử dụng AI đúng chuẩn mực đạo đức và quy định nhà trường.</p>
+
+                        <p><strong>Quá trình thực hiện:</strong> Nghiên cứu chính sách VNU-VJU (công khai và trích dẫn) so sánh HUST. Xác định ranh giới giữa hỗ trợ hợp lý và gian lận. Thiết lập quy trình 5 bước: Tự suy nghĩ → AI hỗ trợ → Xác minh → Chỉnh sửa → Trích dẫn minh bạch.</p>
+
+                        <p><strong>Kỹ năng đạt được:</strong> Xây dựng 7 nguyên tắc cá nhân, quan trọng nhất: AI là công cụ hỗ trợ không thay thế tư duy và luôn trích dẫn minh bạch theo chuẩn APA/IEEE.</p>
+
+                        <p><strong>Sản phẩm:</strong> Báo cáo "Sử dụng AI có trách nhiệm trong học tập" và infographic quy trình 5 bước.</p>
+
+                        <p><strong>Tự đánh giá:</strong> Tại VNU-VJU, sử dụng AI có trách nhiệm thể hiện tinh thần học thuật nghiêm túc theo chuẩn Nhật Bản. Cam kết công khai việc sử dụng AI.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" style="background: var(--background);">
+        <div class="container">
+            <h2>Kỹ năng đạt được</h2>
+            <p class="section-subtitle">Dashboard kỹ năng phát triển qua môn học</p>
+            <div class="skills-grid">
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">1</div>
+                    <div class="skill-name">Information Literacy</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%"></div>
+                    </div>
+                    <div class="skill-percent">85%</div>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">1</div>
+                    <div class="skill-name">Prompt Engineering</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 90%"></div>
+                    </div>
+                    <div class="skill-percent">90%</div>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">1</div>
+                    <div class="skill-name">AI Tools</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 88%"></div>
+                    </div>
+                    <div class="skill-percent">88%</div>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">1</div>
+                    <div class="skill-name">Team Collaboration</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 82%"></div>
+                    </div>
+                    <div class="skill-percent">82%</div>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">1</div>
+                    <div class="skill-name">Academic Research</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 80%"></div>
+                    </div>
+                    <div class="skill-percent">80%</div>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">1</div>
+                    <div class="skill-name">Digital Communication</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 86%"></div>
+                    </div>
+                    <div class="skill-percent">86%</div>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">1</div>
+                    <div class="skill-name">Presentation Skills</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 84%"></div>
+                    </div>
+                    <div class="skill-percent">84%</div>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">1</div>
+                    <div class="skill-name">Problem Solving</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 87%"></div>
+                    </div>
+                    <div class="skill-percent">87%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements">
+        <div class="container">
+            <h2>Thành tựu</h2>
+            <p class="section-subtitle">Những con số đáng tự hào</p>
+            <div class="achievements-grid">
+                <div class="achievement-card fade-in">
+                    <div class="achievement-number">6+</div>
+                    <div class="achievement-label">Bài tập hoàn thành</div>
+                </div>
+                <div class="achievement-card fade-in">
+                    <div class="achievement-number">20+</div>
+                    <div class="achievement-label">Giờ nghiên cứu</div>
+                </div>
+                <div class="achievement-card fade-in">
+                    <div class="achievement-number">5+</div>
+                    <div class="achievement-label">Công cụ AI sử dụng</div>
+                </div>
+                <div class="achievement-card fade-in">
+                    <div class="achievement-number">100%</div>
+                    <div class="achievement-label">Hoàn thành Portfolio</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Portfolio Học Tập - Nhập môn Công nghệ Số. Made with ❤️</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Theme Toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const btn = document.querySelector('.theme-toggle');
+            const currentTheme = html.getAttribute('data-theme');
+
+            if (currentTheme === 'dark') {
+                html.removeAttribute('data-theme');
+                btn.textContent = '🌙 Chế độ tối';
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                btn.textContent = '☀️ Chế độ sáng';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Load saved theme
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            const btn = document.querySelector('.theme-toggle');
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                btn.textContent = '☀️ Chế độ sáng';
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Back to top button
+        const backToTop = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Smooth scrolling for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
